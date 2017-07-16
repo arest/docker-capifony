@@ -1,6 +1,7 @@
 # How to use this image
 
 ## Requirements
+
 	Install first docker-ssh-agent
 	https://github.com/andreasur/docker-ssh-agent
 
@@ -17,3 +18,9 @@
         arestello/capifony
 
 This runs capifony in the current directory. All followed parameters are passed to capifony.
+
+## Optional: Create an alias
+
+    alias dcap='docker run --rm -i -t -v $(pwd):/root/workdir --volumes-from=ssh-agent -e SSH_AUTH_SOCK=/.ssh-agent/socket arestello/capifony'
+
+
